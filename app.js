@@ -2,12 +2,10 @@ import express from "express";
 import cors from "cors";
 import db from "./database/db.js";
 import blogRoutes from "./routes/routes.js";
-import config from 'dotenv';
+import dotenv from 'dotenv';
 
 
-// if(process.env.NODE_ENV !== "production") {
-//     require("dotenv").config();
-// }
+dotenv.config();
 
 
 const app = express();
