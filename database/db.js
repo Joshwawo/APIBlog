@@ -1,7 +1,7 @@
 import {Sequelize} from "sequelize";
 import dotenv from "dotenv";
 dotenv.config();
-// 'blog','root', 'root',
+
 const db = new Sequelize({
     host: process.env.HOST,
     username: process.env.USER,
@@ -11,7 +11,7 @@ const db = new Sequelize({
     logging: false,
 });
 
-// console.log(db.config.database);
+
 
 
 
