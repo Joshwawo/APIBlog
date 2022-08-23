@@ -20,7 +20,6 @@ app.use("/blogs", blogRoutes);
 app.use("/clash",cardRoutes);
 app.use("/lol",lolRoutes)
 // app.use("cards")
-// app.use("/card",)
 
 try {
   await db.authenticate();
