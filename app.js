@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import db from "./database/db.js";
 import blogRoutes from "./routes/routes.js";
+import cardRoutes from './routes/routes2.js'
+import lolRoutes from './routes/routes3.js'
+
 // import dotenv from "dotenv";
 
 const app = express();
@@ -14,6 +17,10 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(express.json());
 app.use("/blogs", blogRoutes);
+app.use("/clash",cardRoutes);
+app.use("/lol",lolRoutes)
+// app.use("cards")
+// app.use("/card",)
 
 try {
   await db.authenticate();
