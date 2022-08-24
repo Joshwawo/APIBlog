@@ -1,6 +1,7 @@
 import axios from "axios";
 import dotenv from "dotenv";
 import cors from 'cors';
+// import {corsOptions,whitelist} from '../app';
 
 dotenv.config();
 
@@ -23,13 +24,8 @@ const fetchPlayer = async (playerName) => {
     .catch((error) => console.log(error));
 };
 
-export const lolChamps = (req, res, next) => {
+export const lolChamps =  (req, res, next) => {
 
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Credentials", "true");
-    next();
     res.json({ message: "hola desde lolChamps" });
 };
 
@@ -60,12 +56,9 @@ res.status(200).json(allChamps);
 //   res.json(getPlayerName);
 // };
 
-export const getPlayerName = async (req, res, next) => {
+export const getPlayerName = async (req, res,) => {
 
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Methods", "GET,POST, PUT, DELETE, OPTIONS");
-    next();
+    
     const playerName = req.query.playerName;
     const getPlayerName = await fetchPlayer(playerName);
     console.log(getPlayerName);
