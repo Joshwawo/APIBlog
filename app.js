@@ -12,13 +12,19 @@ const app = express();
 
 const PORT = process.env.PORT || 8000;
 
+//Proteger la ruta con cors
+
+
 
 
 app.use(cors());
 app.use(express.json());
 app.use("/blogs", blogRoutes);
 app.use("/clash",cardRoutes);
-app.use("/lol",lolRoutes)
+app.use("/lol",lolRoutes );
+
+
+
 // app.use("cards")
 
 try {

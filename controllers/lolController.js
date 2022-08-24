@@ -1,5 +1,6 @@
 import axios from "axios";
 import dotenv from "dotenv";
+import cors from 'cors';
 
 dotenv.config();
 
@@ -33,13 +34,23 @@ export const lolAllChamps = async (req, res) => {
   res.json(allChamps);
 };
 
-export const getPlayerName = async (req, res) => {
+// export const getPlayerName = async (req, res) => {
+//   const playerName = req.query.playerName;
+
+//   const getPlayerName = await fetchPlayer(playerName);
+//   console.log(getPlayerName);
+//   res.json(getPlayerName);
+// };
+
+export const getPlayerName = async (req, res, next) => {
+
+    res.header("Access-Control-Allow-Origin", "http://127.0.0.1");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, PUT, DELETE, OPTIONS");
+    next();
     const playerName = req.query.playerName;
-    // console.log(playerName)
-  // res.json({message: 'Hola desde get by name'})
-//   let playerName = "peje";
-  const getPlayerName = await fetchPlayer(playerName);
-  // console.log(getPlayerName)
-  console.log(getPlayerName);
-  res.json(getPlayerName);
-};
+    const getPlayerName = await fetchPlayer(playerName);
+    console.log(getPlayerName);
+    res.json(getPlayerName);
+  };
+  
