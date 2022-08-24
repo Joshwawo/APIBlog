@@ -28,6 +28,7 @@ export const lolChamps = (req, res) => {
 
 export const lolAllChamps = async (req, res) => {
   // res.json({message:'Hola desde allChamps'})
+  //asd
   const allChamps = await fetchAllChamps();
   res.json(allChamps);
 };
