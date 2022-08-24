@@ -27,11 +27,12 @@ export const whitelist = [
   "http://127.0.0.1:5173/lol",
   "http://localhost:3307/testing",
   "2806:263:c487:539:e92b:72e2:645d:53b7",
+  "https://app-full-stack.vercel.app/"
 ];
 
 export const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(
