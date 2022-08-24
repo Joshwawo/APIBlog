@@ -34,7 +34,7 @@ export const lolChamps = (req, res, next) => {
 
 export const lolAllChamps = async (req, res, next) => {
   // res.json({message:'Hola desde allChamps'})
-  //asd
+  //asdasdasas
 //   res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
   res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
