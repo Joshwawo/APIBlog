@@ -28,20 +28,28 @@ export const lolChamps = (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Credentials", "true");
     next();
     res.json({ message: "hola desde lolChamps" });
 };
 
-export const lolAllChamps = async (req, res, next) => {
+export const lolAllChamps = async (req, res) => {
   // res.json({message:'Hola desde allChamps'})
   //asdasdasas
 //   res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
-  res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET,POST, PUT, DELETE, OPTIONS")
-  next();
-  const allChamps = await fetchAllChamps();
-  res.json(allChamps);
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.status(200).json(await fetchAllChamps());
+//   res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5173/, http://localhost:3307/lol");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods", "GET,POST, PUT, DELETE, OPTIONS")
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   next();
+// console.log(error.stack)
+// console.error(err.stack)
+const allChamps = await fetchAllChamps();
+res.status(200).json(allChamps);
+//   res.status(200).json(await fetchAllChamps());
+
 };
 
 // export const getPlayerName = async (req, res) => {
