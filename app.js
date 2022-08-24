@@ -8,7 +8,7 @@ import lolRoutes from './routes/routes3.js'
 // import dotenv from "dotenv";
 
 const app = express();
-dotenv.config();
+// dotenv.config();
 
 const PORT = process.env.PORT || 8000;
 
