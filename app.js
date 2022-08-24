@@ -13,7 +13,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8000;
 app.use(cors({
-    origin: "https://app-full-stack.vercel.app/",
+    origin: ["https://app-full-stack.vercel.app/","http://127.0.0.1:5173/"]
 }));
 app.use(methodOverride());
 app.use(express.json());
@@ -51,7 +51,7 @@ export const corsOptions = {
 
 app.use("/blogs", blogRoutes);
 app.use("/clash", cardRoutes);
-app.use("/lol", cors(corsOptions),lolRoutes);
+app.use("/lol",lolRoutes);
 
 // app.use("cards")
 
@@ -66,7 +66,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Hola desde la api del blog" });
 });
 
-app.get("/testing", cors(corsOptions), (req, res, next) => {
+app.get("/testing",  (req, res, next) => {
   // console.error(err.stack)
   // res.status(500).send('Something broke!')
   res.json({ msg: "This is CORS-enabled for a whitelisted domain." });
