@@ -11,9 +11,7 @@ const app = express();
 // dotenv.config();
 
 const PORT = process.env.PORT || 8000;
-app.use(cors({
-    origin: ["https://app-full-stack.vercel.app/","http://127.0.0.1:5173/"]
-}));
+app.use(cors());
 // app.use(methodOverride());
 app.use(express.json());
 
