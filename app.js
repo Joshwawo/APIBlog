@@ -12,6 +12,9 @@ const app = express();
 // dotenv.config();
 
 const PORT = process.env.PORT || 8000;
+app.use(cors());
+app.use(methodOverride());
+app.use(express.json());
 
 //Proteger la ruta con cors
 export const whitelist = [
@@ -39,14 +42,11 @@ export const corsOptions = {
         new Error(
           "Bloqueado por CORS, si quieres acceder a este recurso, ponte en contacto con el administrador"
         )
-      );
-    }
+        );
+      }
   },
 };
 
-app.use(methodOverride());
-app.use(cors());
-app.use(express.json());
 app.use("/blogs", blogRoutes);
 app.use("/clash", cardRoutes);
 app.use("/lol", cors(corsOptions),lolRoutes);
