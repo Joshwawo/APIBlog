@@ -7,17 +7,19 @@ dotenv.config();
 const API_KEY = process.env.API_KEY;
 
 const fetchDataCards = async () => {
-  return await axios
+ return await axios
     .get("https://proxy.royaleapi.dev/v1/cards", {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
+        
        
       },
 
     })
-    //   console.log(respuesta.data);
+      // console.log(respuesta.data);
     .then((respuesta) => respuesta.data)
     .catch((error) => console.log(error));
+    // console.log(respuesta.data);
 };
 //TODO:PONER UN MIDDLEWARE PARA QUE SOLO SE PUEDA ACCEDER A ESTE CONTROLADOR SI SE HA LOGEADO
 //TODO:PONER UPPERCASE EN EL NOMBRE DE LOS CLANS Y JUGADORES
@@ -105,5 +107,6 @@ export const getClan = async (req, res) => {
   // res.json({mesage: 'Desde getClan'})
   const userClan = await fetchDataClan();
   console.log(userClan);
+  console.log('Desde getClan funciona xi heroku qlo')
   res.json(userClan);
 };
