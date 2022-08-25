@@ -31,7 +31,7 @@ const fetchDataByID = async (userHashtag) => {
       },
     })
     .then((respuesta) => respuesta.data)
-    .catch((error) => error);
+    .catch((error) => console.log(error));
 };
 
 const fetchDataChest = async (userHashtag) => {
@@ -48,7 +48,7 @@ const fetchDataChest = async (userHashtag) => {
       },
     })
     .then((respuesta) => respuesta.data)
-    .catch((error) => error);
+    .catch((error) => console.log(error));
 };
 
 const fetchDataClan = async () => {
@@ -61,7 +61,7 @@ const fetchDataClan = async () => {
       },
     })
     .then((respuesta) => respuesta.data)
-    .catch((error) => error);
+    .catch((error) => console.log(error));
 };
 
 export const getAllCard = async (req, res) => {
