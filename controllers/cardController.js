@@ -8,10 +8,12 @@ const API_KEY = process.env.API_KEY;
 
 const fetchDataCards = async () => {
   return await axios
-    .get("https://api.clashroyale.com/v1/cards", {
+    .get("https://proxy.royaleapi.dev/v1/cards", {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
+       
       },
+
     })
     //   console.log(respuesta.data);
     .then((respuesta) => respuesta.data)
@@ -22,8 +24,9 @@ const fetchDataCards = async () => {
 const fetchDataByID = async (userHashtag) => {
   // const userId = "CUG0LUP8R".toUpperCase();
   // const userwitchhastack ="#UJJR8PUCG".toUpperCase().replace("#", "%23");
-
-  const url = `https://api.clashroyale.com/v1/players/${userHashtag}`;
+  // const proxy = "https://proxy.royaleapi.dev/v1/players/"
+  // const url = `https://api.clashroyale.com/v1/players/${userHashtag}`;
+  const url = `https://proxy.royaleapi.dev/v1/players/${userHashtag}`;
   return await axios
     .get(url, {
       headers: {
@@ -38,8 +41,9 @@ const fetchDataChest = async (userHashtag) => {
   //"https://api.clashroyale.com/v1/players/%23QPYJPJ20/upcomingchests";
   // %23QPYJPJ20
   //aaas
+  
   const url =
-    `https://api.clashroyale.com/v1/players/${userHashtag}/upcomingchests`;
+    `https://proxy.royaleapi.dev/v1/players/${userHashtag}/upcomingchests`;
 
   return await axios
     .get(url, {
@@ -50,9 +54,9 @@ const fetchDataChest = async (userHashtag) => {
     .then((respuesta) => respuesta.data)
     .catch((error) => console.log(error));
 };
-
+// https://proxy.royaleapi.dev/v1/players/${userHashtag}/upcomingchests
 const fetchDataClan = async () => {
-  const url = "https://api.clashroyale.com/v1/clans/%23LRJ0GLV2";
+  const url = "https://proxy.royaleapi.dev/v1/clans/%23LRJ0GLV2";
 
   return await axios
     .get(url, {
@@ -99,5 +103,6 @@ export const getUserChest = async (req, res) => {
 export const getClan = async (req, res) => {
   // res.json({mesage: 'Desde getClan'})
   const userClan = await fetchDataClan();
+  console.log(userClan);
   res.json(userClan);
 };
