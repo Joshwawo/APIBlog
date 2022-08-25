@@ -36,7 +36,7 @@ const fetchDataByID = async (userHashtag) => {
       },
     })
     .then((respuesta) => respuesta.data)
-    .catch((error) => console.log(error));
+    .catch((error) => error);
 };
 
 const fetchDataChest = async (userHashtag) => {
@@ -54,7 +54,7 @@ const fetchDataChest = async (userHashtag) => {
       },
     })
     .then((respuesta) => respuesta.data)
-    .catch((error) => console.log(error));
+    .catch((error) => error);
 };
 // https://proxy.royaleapi.dev/v1/players/${userHashtag}/upcomingchests
 //tacos dechale
@@ -68,7 +68,7 @@ const fetchDataClan = async () => {
       },
     })
     .then((respuesta) => respuesta.data)
-    .catch((error) => console.log(error));
+    .catch((error) => error);
 };
 
 export const getAllCard = async (req, res) => {
