@@ -55,6 +55,7 @@ const fetchDataChest = async (userHashtag) => {
     .catch((error) => console.log(error));
 };
 // https://proxy.royaleapi.dev/v1/players/${userHashtag}/upcomingchests
+//tacos dechale
 const fetchDataClan = async () => {
   const url = "https://proxy.royaleapi.dev/v1/clans/%23LRJ0GLV2";
 
