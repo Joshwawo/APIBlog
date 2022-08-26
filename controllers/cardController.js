@@ -46,6 +46,9 @@ const fetchDataByID = async (userHashtag) => {
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`,
+        'Accept': 'application/json ; charset=utf-8',
+        'Accept-Language': 'en-US',
+        'Accept-Encoding': 'gzip, deflate',
       },
     })
     .then((respuesta) => respuesta.data)
@@ -65,6 +68,9 @@ const fetchDataChest = async (userHashtag) => {
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`,
+        'Accept': 'application/json ; charset=utf-8',
+        'Accept-Language': 'en-US',
+        'Accept-Encoding': 'gzip, deflate',
       },
     })
     .then((respuesta) => respuesta.data)
@@ -80,6 +86,9 @@ const fetchDataClan = async () => {
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`,
+        'Accept': 'application/json ; charset=utf-8',
+        'Accept-Language': 'en-US',
+        'Accept-Encoding': 'gzip, deflate',
       },
     })
     .then((respuesta) => respuesta.data)
@@ -88,7 +97,7 @@ const fetchDataClan = async () => {
 
 export const getAllCard = async (req, res) => {
   const dataCard = await fetchDataCards();
-  console.log(dataCard);
+  // console.log(dataCard);
    console.log('data card clash/cardss')
   res.json(dataCard);
 };
