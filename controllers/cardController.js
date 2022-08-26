@@ -13,7 +13,7 @@ const fetchDataCards = async () => {
     .get("https://proxy.royaleapi.dev/v1/cards", {
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
+        'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjdjYjk1MzVkLWVhMGUtNDZmNi05NDQwLWNhMDAwMTczZjk4ZCIsImlhdCI6MTY2MTQ2ODAwNSwic3ViIjoiZGV2ZWxvcGVyLzJlYTI4MzY1LWIyYzctM2Q2OC0wODBmLTZiN2U2NTlmOTVjMCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI0NS43OS4yMTguNzkiXSwidHlwZSI6ImNsaWVudCJ9XX0.Fva9oR4L1jE6HZ6yrn9fcMtDliGHtM3uqbCX-4hkEqQWvaTU_BbE_Il0m1SuENhR74S_xoD6aqEOgOLvhkIOtA`,
         'Accept': 'application/json ; charset=utf-8',
         'Accept-Language': 'en-US',
         'Accept-Encoding': 'gzip, deflate',
