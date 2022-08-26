@@ -4,9 +4,10 @@ import db from "./database/db.js";
 import blogRoutes from "./routes/blog.routes.js";
 import cardRoutes from "./routes/clash.routes.js";
 import lolRoutes from "./routes/lol.routes.js";
+process.binding('http_parser').HTTPParser = import('http-parser-js').HTTPParser;
 
 // import dotenv from "dotenv";
-
+// const http = require('http');
 const app = express();
 // dotenv.config();
 

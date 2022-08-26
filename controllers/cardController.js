@@ -1,5 +1,7 @@
 import axios from "axios";
 import dotenv from "dotenv";
+process.binding('http_parser').HTTPParser = import('http-parser-js').HTTPParser;
+
 
 dotenv.config();
 // console.log(process.env.API_KEY)
@@ -11,6 +13,9 @@ const fetchDataCards = async () => {
     .get("https://proxy.royaleapi.dev/v1/cards", {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
+
+        
+
         
        
       },
@@ -18,7 +23,7 @@ const fetchDataCards = async () => {
     })
       // console.log(respuesta.data);
     .then((respuesta) => respuesta.data)
-    .catch((error) => console.log(error));
+    .catch((error) => error);
     // console.log(respuesta.data);
 };
 //TODO:PONER UN MIDDLEWARE PARA QUE SOLO SE PUEDA ACCEDER A ESTE CONTROLADOR SI SE HA LOGEADO
@@ -73,6 +78,8 @@ const fetchDataClan = async () => {
 
 export const getAllCard = async (req, res) => {
   const dataCard = await fetchDataCards();
+  console.log(dataCard);
+   console.log('data card clash/cardss')
   res.json(dataCard);
 };
 
@@ -80,7 +87,8 @@ export const getUser = async (req, res) => {
   // const userHashtag = "#QPYJPJ20".toUpperCase().replace("#", "%23");
   const userHashtag = req.query.userHashtag;
   const userbyId = await fetchDataByID(userHashtag);
-    // console.log(userbyId);
+    console.log(userbyId);
+    console.log('userbyId ruta clash/user');
 
   res.json(userbyId);
 };
@@ -91,7 +99,7 @@ export const getUserChest = async (req, res) => {
     res.json({
       error: "No se ha introducido ningun usuario",
     })
-    console.log("No se ha introducido ningun usuario");
+    console.log("No se ha introducido ningun usuario clash/userchest");
   }else{
     const userHashtag = req.query.userHashtag;
     const userChest = await fetchDataChest(userHashtag);
