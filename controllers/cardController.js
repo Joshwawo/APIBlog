@@ -12,7 +12,12 @@ const fetchDataCards = async () => {
  return await axios
     .get("https://proxy.royaleapi.dev/v1/cards", {
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
+        'Accept': 'application/json',
+        'Accept-Language': 'en-US',
+        'Accept-Encoding': 'gzip, deflate',
+        
 
         
 
@@ -37,7 +42,8 @@ const fetchDataByID = async (userHashtag) => {
   return await axios
     .get(url, {
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
       },
     })
     .then((respuesta) => respuesta.data)
@@ -55,7 +61,8 @@ const fetchDataChest = async (userHashtag) => {
   return await axios
     .get(url, {
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
       },
     })
     .then((respuesta) => respuesta.data)
@@ -69,7 +76,8 @@ const fetchDataClan = async () => {
   return await axios
     .get(url, {
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
       },
     })
     .then((respuesta) => respuesta.data)
