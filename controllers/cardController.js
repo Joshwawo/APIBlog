@@ -14,10 +14,11 @@ const fetchDataCards = async () => {
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`,
-        'Accept': 'application/json',
+        'Accept': 'application/json ; charset=utf-8',
         'Accept-Language': 'en-US',
         'Accept-Encoding': 'gzip, deflate',
-        
+        'set-cookie': [ 'someCookieName=rHA\u0001sBlP; path=/; Max-Age=900' ],
+
 
         
 
